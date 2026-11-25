@@ -2,7 +2,9 @@
 
 An educational machine-learning project that compares three regression models on California housing data and serves the best one in an interactive Streamlit app.
 
-![App screenshot](Screenshot%202026-11-26%20043303.png)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://house-price-prediction-n7kadsda3svp5jirqqmgjg.streamlit.app/)
+
+[![App screenshot](Screenshot%202026-11-26%20043303.png)](https://house-price-prediction-n7kadsda3svp5jirqqmgjg.streamlit.app/)
 
 ## Purpose
 Estimate the **median house value of a California district** (in 1990 US dollars) from census features: income, location, housing age, population and ocean proximity.
