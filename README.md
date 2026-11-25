@@ -12,7 +12,7 @@ Estimate the **median house value of a California district** (in 1990 US dollars
 - **Size:** 20,640 districts, 9 input features, target `median_house_value`.
 - **Units:** prices in US dollars (1990). Each row is a **district**, not a single house, so rooms, bedrooms, population and households are district totals.
 - **Missing values:** 207 values of `total_bedrooms`. They are filled with the training-set median inside the pipeline.
-- **Price cap:** prices are capped at 500,001 (about 4.8% of districts).
+- **Price cap:** prices are capped at 500,001. 965 districts (about 4.7%) sit at the cap.
 
 | Column | Meaning |
 |---|---|
@@ -59,7 +59,7 @@ R² is the share of price variation the model explains on unseen data. It is not
 
 The ratio features helped Linear Regression and slightly helped the Decision Tree. They made no meaningful difference to Random Forest (a drop of 0.005 R²), which can learn such combinations from the raw columns itself. Random Forest is the best model in both cases.
 
-`median_income` is by far the most important feature, followed by location (inland, latitude, longitude).
+`median_income` is by far the most important feature (about 49%), followed by being inland (about 14%) and `population_per_household` (about 12%). Longitude and latitude contribute about 6% each.
 
 ## The app
 Run it with `streamlit run app.py`. A sidebar menu switches between three pages.
@@ -146,7 +146,7 @@ The random seed (42) and the 80/20 split are fixed in `src/data_preprocessing.py
 
 ## Limitations
 - **Old data:** 1990 census. Do not use it to value real property today.
-- **Price cap:** the highest prices are unknown, so expensive districts are underpredicted (by about $74,000 on average for capped districts).
+- **Price cap:** the highest prices are unknown, so expensive districts are underpredicted (by about $76,000 on average for capped districts).
 - **District level:** predictions are for a district's median value, not one house.
 - **Rare category:** `ISLAND` has 5 rows, so its predictions are unreliable.
 - **Overfitting gap:** Random Forest train R² (0.96) is above its test R² (0.81). No hyperparameter tuning was done.
