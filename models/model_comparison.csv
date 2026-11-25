@@ -1,0 +1,4 @@
+Model,Train R²,CV R² (mean),CV R² (std),Test R²,Test MAE ($),Test RMSE ($)
+Linear Regression,0.6497,0.6475,0.0115,0.6254,50670.4892,70059.1933
+Decision Tree,0.7482,0.7048,0.0064,0.7073,42324.7597,61927.3975
+Random Forest,0.9594,0.8195,0.0041,0.8183,31450.1538,48793.0452
